@@ -1,53 +1,20 @@
-* {
-  box-sizing: border-box;
+#posterWrapper {
+  max-width: 100vw;
+  width: 2480px;
+  height: 3508px;
+  position: relative;
+  zoom: 0.25;
 }
-
-:root {
-  --poster-height: calc((var(--view-width) / 2480) * 3508);
-}
-
-#startOverlay {
-  position: fixed;     /* fixed to viewport */
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: #000;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.5rem;
-  font-weight: bold;
-  z-index: 9999;       /* higher z-index to sit above everything */
-  cursor: pointer;
-  user-select: none;
-  transition: color 0.3s ease;
-}
-
-#startOverlay:hover {
-  color: #ddd;
-}
-
-
-
 
 body {
+  background-color: black;
   margin: 0;
   overflow-x: hidden;
-}
 
-#cursor {
-  position: absolute;
-  width: 4px;
-  height: 50px; /* temporary default so it's visible initially */
-  background: black;
-  animation: blink 1s step-end infinite;
-  pointer-events: none;
-  z-index: 999;
-  opacity: 1;
-  transform-origin: top left;
-
+  display: flex;
+  justify-content: center;  /* horizontal center */
+  align-items: center;      /* vertical center */
+  min-height: 100vh;        /* full viewport height */
 }
 
 
@@ -55,143 +22,137 @@ body {
   position: relative;
   background-size: cover;
   background-image: url(assets/background-no-text.jpg);
-  width: var(--view-width);
-  height: var(--poster-height);
+  width: 2480px;   /* full size */
+  height: 3508px;  /* full size */
 }
 
-.posterlite {  position: relative;
-  background-size: cover;
-  background-image: url(assets/english-background.jpg);
-  width: var(--view-width);
-  height: var(--poster-height);
-  opacity:80%;
-  z-index: 10;
+#startOverlay {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  z-index: 9999;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.3s ease;
 }
+
+/* Letters */
 
 .letter {
   position: absolute;
-  position: absolute;
   opacity: 0;
   transition: opacity 0.2s ease;
-
   z-index: 10;
-  transform-origin: top left; /* ensures it scales from top-left corner */
+  transform-origin: top left; /* keep in case you need rotation or other transform */
+  
+  /* Remove any transform: scale */
 }
 
-/* positions converted to % */
+/* Positions converted to % */
+/* Removed transform scale on each letter */
 
 #letter1 {
   top: 27.5%;
   left: 18.3%;
-  transform: scale(3.2); /* adjust as needed */
 }
 
 #letter2 {
- top: 14.4%;
+  top: 14.4%;
   left: 19.4%;
-  transform: scale(3.1); /* adjust as needed */
 }
 
 #letter3 {
- top:-1.4%;
+  top: -1.4%;
   left: 19.8%;
-  transform: scale(3.1); /* adjust as needed */
 }
 
 #letter4 {
- top:14.8%;
+  top: 14.8%;
   left: 59.9%;
-  transform: scale(3.1); /* adjust as needed */
 }
 
 #letter5 {
- top:3%;
+  top: 3%;
   left: 71.9%;
-  transform: scale(3.1); /* adjust as needed */
 }
 
 #letter6 {
- top:59.4%;
+  top: 59.4%;
   left: 33.9%;
-  transform: scale(3.1); /* adjust as needed */
 }
 
 #letter7 {
- top:58.1%;
+  top: 58.1%;
   left: 48.1%;
-  transform: scale(3.1); /* adjust as needed */
 }
 
 #letter8 {
- top:54.1%;
+  top: 54.1%;
   left: 53.6%;
-  transform: scale(3.1); /* adjust as needed */
 }
 
 #letter9 {
- top:52.9%;
+  top: 52.9%;
   left: 63.7%;
-  transform: scale(3.1); /* adjust as needed */
 }
 
 #letter10 {
- top:48%;
+  top: 48%;
   left: 73.8%;
-  transform: scale(3.1); /* adjust as needed */
 }
 
 #letter11 {
-top:43.9%;
+  top: 43.9%;
   left: 85%;
-  transform: scale(3.1); /* adjust as needed */
 }
 
+/* English letters similarly: */
 
-/*english words*/
 #letter1-5 {
   top: 26.5%;
   left: 17.5%;
-  transform: scale(3.2); /* adjust as needed */
 }
 
 #letter2-5 {
- top: 16.9%;
+  top: 16.9%;
   left: 17.4%;
-  transform: scale(3.1); /* adjust as needed */
 }
 
 #letter3-5 {
  top:12.8%;
   left: 63.9%;
-  transform: scale(3.1); /* adjust as needed */
+
 }
 
 #letter4-5 {
  top:4%;
   left: 71.3%;
-  transform: scale(3.1); /* adjust as needed */
+
 }
 
 #letter5-5 {
  top:55.9%;
   left: 47.6%;
-  transform: scale(3.1); /* adjust as needed */
 }
 
 #letter6-5 {
  top:53.1%;
   left: 56.5%;
-  transform: scale(3.1); /* adjust as needed */
 }
 
 #letter7-5 {
  top:51.4%;
   left: 65.5%;
-  transform: scale(3.1); /* adjust as needed */
 }
 
 #letter8-5 {
  top:47.7%;
   left: 78.3%;
-  transform: scale(3.1); /* adjust as needed */
 }
+/* etc. remove transform scales here too */
