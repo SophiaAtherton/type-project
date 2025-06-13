@@ -11,6 +11,20 @@ body {
   overflow-x: hidden;
 }
 
+#cursor {
+  position: absolute;
+  width: 4px;
+  height: 50px; /* temporary default so it's visible initially */
+  background: black;
+  animation: blink 1s step-end infinite;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 1;
+  transform-origin: top left;
+
+}
+
+
 .poster {
   position: relative;
   background-size: cover;
@@ -21,7 +35,7 @@ body {
 
 .posterlite {  position: relative;
   background-size: cover;
-  background-image: url(assets/final-image.jpg);
+  background-image: url(assets/english-background.jpg);
   width: var(--view-width);
   height: var(--poster-height);
   opacity:80%;
@@ -30,6 +44,9 @@ body {
 
 .letter {
   position: absolute;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.2s ease;
 
   z-index: 10;
   transform-origin: top left; /* ensures it scales from top-left corner */
@@ -100,5 +117,55 @@ body {
 #letter11 {
 top:43.9%;
   left: 85%;
+  transform: scale(3.1); /* adjust as needed */
+}
+
+
+/*english words*/
+#letter1-5 {
+  top: 26.5%;
+  left: 17.5%;
+  transform: scale(3.2); /* adjust as needed */
+}
+
+#letter2-5 {
+ top: 16.9%;
+  left: 17.4%;
+  transform: scale(3.1); /* adjust as needed */
+}
+
+#letter3-5 {
+ top:12.8%;
+  left: 63.9%;
+  transform: scale(3.1); /* adjust as needed */
+}
+
+#letter4-5 {
+ top:4%;
+  left: 71.3%;
+  transform: scale(3.1); /* adjust as needed */
+}
+
+#letter5-5 {
+ top:55.9%;
+  left: 47.6%;
+  transform: scale(3.1); /* adjust as needed */
+}
+
+#letter6-5 {
+ top:53.1%;
+  left: 56.5%;
+  transform: scale(3.1); /* adjust as needed */
+}
+
+#letter7-5 {
+ top:51.4%;
+  left: 65.5%;
+  transform: scale(3.1); /* adjust as needed */
+}
+
+#letter8-5 {
+ top:47.7%;
+  left: 78.3%;
   transform: scale(3.1); /* adjust as needed */
 }
